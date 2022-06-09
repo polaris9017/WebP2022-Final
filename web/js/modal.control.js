@@ -104,9 +104,9 @@ myModalEl.addEventListener('hide.bs.modal', function (event) {  //Modal 닫힐 �
         let div_text_pref = "";  //우선주
 
         arr.forEach(function (value) {
-            if ((value['stock_knd'].toString()).includes('보통주') && value[year.toString()] !== "-") {
+            if (value['stock_knd'] === '보통주' || value['stock_knd'] === '보통주식' && value[year.toString()] !== "-") {
                 div_text_norm = "<span class=\"fs-5\">보통주</span>" + "<span class=\"fs-1 text-warning fw-semibold\"> " + value[year.toString()] + "</span>원"
-            } else if ((value['stock_knd'].toString()).includes('우선주') && value[year.toString()] !== "-") {
+            } else if (value['stock_knd'] === '우선주' || value['stock_knd'] === '우선주식' && value[year.toString()] !== "-") {
                 if (arr.length === 2)
                     div_text_pref += "<span class=\"fs-5\">, </span>"
                 div_text_pref = "<span class=\"fs-5\">우선주</span>" + "<span class=\"fs-1 text-warning fw-semibold\"> " + value[year.toString()] + "</span>원";
